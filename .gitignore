@@ -1,0 +1,6 @@
+# We must focus and make it simple
+.terraform
+.DS_Store
+terraform.tfstate.backup
+terraform.tfstate
+/.metadata/

@@ -1,0 +1,7 @@
+- hosts: tomcat-production-servers
+  remote_user: kyoheim
+  become: yes
+  become_method: sudo
+
+  roles:
+    - tomcat

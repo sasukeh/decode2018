@@ -1,0 +1,6 @@
+[tomcat-staging-servers]
+decode2018-staging-tomcat.japaneast.cloudapp.azure.com
+
+[tomcat-production-servers]
+decode2018-prod-tomcat.japaneast.cloudapp.azure.com
+

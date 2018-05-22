@@ -1,0 +1,39 @@
+---
+- name: Install tomcat8
+  apt: 
+   name=tomcat8
+   state=present
+
+- name: Install tomcat8 docs
+  apt: 
+   name=tomcat8-docs
+   state=present
+
+- name: Install tomcat8 examples
+  apt: 
+   name=tomcat8-examples
+   state=present
+
+- name: Install tomcat8 admin
+  apt: 
+   name=tomcat8-admin
+   state=present
+
+- name: Start tomcat8 service
+  service:
+   name=tomcat8
+   state=started
+   enabled=yes
+
+- name: Configure Tomcat User
+  template:
+    src=tomcat-users.xml
+    dest=/etc/tomcat8/
+
+- name: Restart tomcat8 service
+  service:
+   name: tomcat8
+   state: restarted
+
+- name: wait for tomcat to start
+  wait_for: port={{http_port}}
